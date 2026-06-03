@@ -1,5 +1,6 @@
 package Assignments.Day4;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -13,8 +14,10 @@ public class SauceDemoLogin {
 			driver.get("https://www.saucedemo.com");
 			driver.manage().window().maximize();
 			WebDriverManager.chromedriver().setup();
-		
-			driver.close();
+			driver.findElement(By.id("User-name")).sendKeys("standarad_user");
+			driver.findElement(By.id("Password")).sendKeys("secretsauce");
+			driver.findElement(By.id("login-button")).click();
+			
 		}catch (Exception e) {
 		
 			e.printStackTrace();
